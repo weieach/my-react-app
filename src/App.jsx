@@ -1,9 +1,14 @@
-function App() {
-  return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
-  );
+import './App.css';
+
+export default function App() {
+  return(
+    <>
+    <Square />
+    </>
+  )
+  
 }
 
-export default App;
+export function Square() {
+  return <button className="square">X</button>;
+}
