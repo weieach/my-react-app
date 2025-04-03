@@ -82,7 +82,7 @@ function calculateWinner(squares) {
   return null;
 }
 
-export function Square({value, onSquareClick}) {
+function Square({value, onSquareClick}) {
   
   return (
   <button 
