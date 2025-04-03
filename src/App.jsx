@@ -13,8 +13,17 @@ export function Board() {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
+
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner) {
+    status = winner + " has won"
+  } else {
+    status = "Next up: " + (xIsNext ? "X":"O");
+  }
+
   function handleClick(i){
-    if (squares[i]) {
+    if (squares[i] || calculateWinner(squares)) {
       return;
     }
     const nextSquares = squares.slice();
