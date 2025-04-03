@@ -1,21 +1,10 @@
 import "./App.css";
 import { useState } from "react";
 
-export default function App() {
-  return (
-    <>
-      <Board />
-    </>
-  );
-}
 
-export function Board() {
+export default function Board() {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
-
-
-  
-
   function handleClick(i){
     if (calculateWinner(squares) || squares[i]) {
       return;
