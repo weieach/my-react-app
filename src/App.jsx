@@ -11,6 +11,10 @@ export default function App() {
 
 export function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [xIsNext, setXIsNext] = useState(true);
+
+  
+
   return (
     <>
       <div className="board-row">
@@ -33,15 +37,10 @@ export function Board() {
 }
 
 export function Square() {
-  const [value, setValue] = useState(null);
-  function handleClick() {
-    setValue('X');
-  }
-
+  
   return (
   <button 
     className="square"
-    onClick={handleClick}
     >
       {value}
     </button>);
