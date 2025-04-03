@@ -26,10 +26,10 @@ export function Board() {
   );
 }
 
-export function Square({ value }) {
+export function Square() {
   const [value, setValue] = useState(null);
   function handleClick() {
-    console.log('clicked');
+    setValue('X');
   }
 
   return (
