@@ -36,8 +36,11 @@ export function Board() {
     setXIsNext(!xIsNext);
   }
 
+  
+
   return (
     <>
+      <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -57,7 +60,7 @@ export function Board() {
   );
 }
 
-function calculateWinner(square) {
+export function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -72,17 +75,18 @@ function calculateWinner(square) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
+    } 
+      return null;
     }
-  }
-  return null;
+  
 }
 
 export function Square({value, onSquareClick}) {
   
   return (
   <button 
-    className="square" onClick={onSquareClick}
-    >
+    className="square" onClick={onSquareClick}>
       {value}
-    </button>);
+    </button>
+    );
 }
